@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Recommendation System-Services</title>
+
+    <!-- Bootstrap Css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Bootstrap Js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <!-- Fontawesome Links -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+     body {
+            background-color: #f7f9fc;
+        }
+
+
+        .container-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .contact-info {
+            text-align: center;
+            max-width: 500px;
+        }
+
+
+
+
+        .accordion-button {
+            background-color: #f8f9fa;
+            color: #073548;
+            font-weight: bold;
+        }
+
+        .accordion-button:focus {
+            border-color: #073548;
+            box-shadow: 0 0 0 0.2rem rgba(7, 53, 72, 0.25);
+        }
+
+
+
+        .contact-info {
+            padding: 20px;
+            font-size: 15px;
+        }
+
+
+
+
+        .contact-info h5{
+            color: #072D48;
+        }
+
+        .contact-info i {
+            font-size: 1.5rem;
+            color: #072D48;
+            margin-right: 10px;
+        }
+
+        .custom-container {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            background-color: #fff;
+            margin: 20px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg " style="background-color: #072D48 ">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="color:azure;" href="#">
+                <img src="{{ url_for('static', filename='logo.jpg') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a style="color:azure;" class="nav-link active" aria-current="page"
+                            href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:azure;" href="/about">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a style="color:azure;" class="nav-link " aria-current="page"
+                            href="/services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="color:azure;" href="/guide">Guide</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" style="color:azure;" href="#">Contact</a>
+                    </li>
+
+
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-warning" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+      <!-- FAQS -->
+   <div class="container faq-container mt-4">
+    <h2 class="mb-3">Frequently Asked Questions (FAQ)</h2>
+    <div class="accordion mb-5" id="faqAccordion">
+
+        <!-- FAQ 1 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faqOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    How does the AI Medicine Recommendation System work?
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="faqOne"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    Our AI system uses advanced algorithms to analyze the symptoms you enter and provides
+                    personalized health recommendations. These include potential diagnoses, medication advice, and
+                    suggestions for lifestyle improvements such as workouts and diets. The system is trained on
+                    medical datasets to offer accurate predictions.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faqTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Is the diagnosis from the system reliable?
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="faqTwo"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    The system is built to provide reliable recommendations based on the symptoms entered. However,
+                    it is important to remember that the system is not a substitute for professional medical advice.
+                    Always consult a doctor for a confirmed diagnosis and personalized treatment.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faqThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    What symptoms can I enter into the system?
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="faqThree"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    You can enter a wide range of symptoms, such as fever, headaches, dizziness, or skin rashes. A
+                    full list of supported symptoms is available on our <a href="./guide.html">Guide Page</a>.
+                    Simply
+                    enter the symptoms you are experiencing, and the system will analyze them to offer the most
+                    accurate recommendations.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faqFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    How secure is my data?
+                </button>
+            </h2>
+            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="faqFour"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    We take data privacy and security very seriously. All data entered into the system is encrypted
+                    and stored securely. We follow strict guidelines to ensure that your health information is
+                    protected and never shared with third parties.
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="faqFive">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Can I contact a human doctor through the system?
+                </button>
+            </h2>
+            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="faqFive"
+                data-bs-parent="#faqAccordion">
+                <div class="accordion-body">
+                    While our system provides AI-driven health recommendations, we do not offer direct consultations
+                    with doctors. However, we recommend that you consult with a healthcare professional for any
+                    serious or persistent health concerns.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+<div class="custom-container">
+
+
+<div class="container-wrapper">
+    <!-- Contact Information -->
+    <div class="contact-info">
+        <h4 class="mb-4">Contact Information</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Location: 123 Health St, Wellness City</p>
+        <p><i class="fas fa-phone-alt"></i> Phone: +123 456 7890</p>
+        <p><i class="fas fa-envelope"></i> Email: info@medai.com</p>
+        <p><i class="fas fa-globe"></i> Website: www.medai.com</p>
+        <h4 class="mt-4">Get in touch with us!</h4>
+        <p style="font-size: 16px;"> We're always here to provide answers.</p>
+
+        <div class="social-media">
+            <h6>Follow Us</h6>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+    </div>
+</div>
+</div>
+
+
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="text-center p-3" style="background-color:  #072D48; color: azure;">
+            Copyright© 2024 AK Tech. All rights reserved.
+        </div>
+
+    </footer>
+
+</body>
